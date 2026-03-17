@@ -13,7 +13,7 @@ const res = await esbuild.build({
     bundle: true,
     format: "esm",
     platform: "node",
-    external: [...new Set([...defaultExternals, ...userExternals])]
+    external: [...new Set([...defaultExternals, ...userExternals])],
     plugins: [uiToStringPlugin],
     write: false,
 });
