@@ -1,5 +1,5 @@
 {
-  "name": "plugin-script",
+  "name": "@orca/plugin-script",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Script to bundle plugins for Orca",
   "devDependencies": {
     "esbuild": "^0.27.4"
   },
