@@ -4,6 +4,7 @@ import {existsSync} from "node:fs";
 import path from "node:path";
 import * as esbuild from "esbuild";
 import packageInfo from "./package.json" with {type: "json"};
+import {uiToStringPlugin} from "./esbuild-plugins/plugin-ui-string.js";
 
 const defaultExternals = ["react", "react-dom", "next"];
 const userExternals = packageInfo.pluginConfig?.external || [];

@@ -1,4 +1,9 @@
-const uiToStringPlugin = {
+import path from 'path';
+import {existsSync} from 'fs';
+import * as esbuild from 'esbuild';
+import {reactShimPlugin} from './plugin-shim.js';
+
+export const uiToStringPlugin = {
     name: 'ui-to-string',
     setup(build) {
         // Wir suchen gezielt nach .tsx/.jsx Importen
