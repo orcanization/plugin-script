@@ -14,5 +14,10 @@
   },
   "bin": {
     "plugin-build": "./index.js"
-  }
+  },
+  "files": [
+    "index.js",
+    "esbuild-plugins",
+    "shims"
+  ]
 }
