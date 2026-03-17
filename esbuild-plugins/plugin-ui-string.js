@@ -51,8 +51,6 @@ export const uiToStringPlugin = {
 
             const bundledCode = result.outputFiles[0].text;
 
-            console.log(bundledCode)
-
             // Wir geben den Code als String-Export zurück
             return {
                 contents: `export default ${JSON.stringify(bundledCode)};`,
