@@ -1,5 +1,5 @@
 {
-  "name": "@orca/plugin-script",
+  "name": "@orca-org/plugin-script",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "esbuild": "^0.27.4"
   },
   "bin": {
-    "plugin-build": "./index.js"
+    "plugin-build": "index.js"
   },
   "files": [
     "index.js",
