@@ -18,7 +18,7 @@ export const reactShimPlugin = {
 
         build.onLoad({filter: /.*/, namespace: 'shim'}, (args) => {
             if (args.path === 'react-shim') {
-                const filePath = join(__dirname, "shims", "react-shim.js");
+                const filePath = join(import.meta.dirname, "..", "shims", "react-shim.js");
                 return {
                     contents: readFileSync(filePath, 'utf8'),
                     loader: 'js',
@@ -26,7 +26,7 @@ export const reactShimPlugin = {
             }
 
             if (args.path === 'jsx-runtime-shim') {
-                const filePath = join(__dirname, "shims", "jsx-runtime-shim.js");
+                const filePath = join(import.meta.dirname, "..", "shims", "jsx-runtime-shim.js");
                 return {
                     contents: readFileSync(filePath, 'utf8'),
                     loader: 'js',
