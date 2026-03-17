@@ -18,14 +18,14 @@ export const reactShimPlugin = {
         build.onLoad({filter: /.*/, namespace: 'shim'}, (args) => {
             if (args.path === 'react-shim') {
                 return {
-                    contents: readFileSync('scripts/react-shim.js', 'utf8'),
+                    contents: readFileSync('shims/react-shim.js', 'utf8'),
                     loader: 'js',
                 };
             }
 
             if (args.path === 'jsx-runtime-shim') {
                 return {
-                    contents: readFileSync('scripts/jsx-runtime-shim.js', 'utf8'),
+                    contents: readFileSync('shims/jsx-runtime-shim.js', 'utf8'),
                     loader: 'js',
                 };
             }
