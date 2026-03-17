@@ -6,6 +6,8 @@ import * as esbuild from "esbuild";
 import packageInfo from "./package.json" with {type: "json"};
 import {uiToStringPlugin} from "./esbuild-plugins/plugin-ui-string.js";
 
+const devRoot = process.cwd()
+
 const defaultExternals = ["react", "react-dom", "next"];
 const userExternals = packageInfo.pluginConfig?.external || [];
 
@@ -21,8 +23,9 @@ const res = await esbuild.build({
 
 const code = res.outputFiles[0].text;
 
-if (!existsSync(".dist")) await mkdir(".dist", {recursive: true});
-const out = path.join(".dist", `${packageInfo.name}.js`);
-await writeFile(out, code);
+const distFolder = path.join(devRoot, ".dist");
+if (!existsSync(distFolder)) await mkdir(distFolder, { recursive: true });
+const outPath = path.join(distFolder, `${packageInfo.name}.js`);
+await writeFile(outPath, code);
 
-console.log(`✅ Plugin bundled successfully: ${out}`);
+console.log(`✅ Plugin bundled successfully: ${outPath}`);
