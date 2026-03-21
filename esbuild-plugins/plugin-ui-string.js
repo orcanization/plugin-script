@@ -42,7 +42,7 @@ export const uiToStringPlugin = {
                 entryPoints: [args.path],
                 bundle: true,
                 write: false,
-                format: 'esm',
+                format: 'cjs',
                 platform: 'browser',
                 minify: false,
                 external: ['react', 'react-dom', 'next', 'react/jsx-runtime'],
